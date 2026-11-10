@@ -179,6 +179,9 @@ export class LionInputDatepicker extends ScopedElementsMixin(
 
     if (name === 'disabled' || name === 'readOnly') {
       this.__toggleInvokerDisabled();
+      if ((this.disabled || this.readOnly) && this.opened) {
+        this.opened = false;
+      }
     }
   }
 
